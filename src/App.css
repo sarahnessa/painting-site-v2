@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+#root {
+  text-align: left !important;
+  border-inline: none !important;
+  background-color: #fcfbf6 !important;
+  color: #100b1c !important;
+  width: 100%;
+}
+
+#main-nav {
+  display: flex;
+  justify-content: flex-end;
+  align-self: flex-start;
+  color: #100b1c !important;
+}
+
+#main-nav [data-slot="navigation-menu-content"] {
+  margin-right: 0;
+  margin-left: 0;
+  right: 0;
+  position: relative;
+  display: block;
+}
+
+#center {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  place-content: left;
+  place-items: left;
+  flex-grow: 1;
+}
+
+#main-headline {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-self: flex-start;
+  align-content: flex-start; 
+  align-items: flex-start;
+  gap: 20px;
+}
+
+#avatar, #main-headline h1, #main-headline #about-me {
+  position: relative;
+  text-align: left !important;
+}
+
+#main-headline h1 {
+  text-align: left;
+  font-size: 60px;
+  color: #100b1c;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+#about-me p {
+  margin-block: 0;
+  padding-block: 0;
+  line-height: 1.5;
+  font-size: 18px;
+}
+
+#bottom {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  place-content: left;
+  place-items: left;
+  flex-grow: 1;
+  width: 100%;
+}
+
+#collageImg {
+  width: 100%;
+  position: relative;
+}
+
+/* Contact Page Styles */
+
+#contact-form {
+  max-width: 600px;
+  min-width: 300px;
+  display: block;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+#contact-form #dash-lg {
+  font-size: 80px;
+  margin-left: 2px;
+  color: #100b1c;
+}
+#contact-form h2 {
+  text-align: left;
+  font-size: 40px;
+  color: #100b1c;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  margin-top: -55px;
+}
+
+#contact-form p {
+  font-size: 16px;
+}
+
+::placeholder {
+  font-size: 16px !important;
+}
+
+#contact-form [data-slot="input"] {
+  margin-top: -20px !important;
+}
+
+#contact-form .label {
+  color: #100b1c;
+}
