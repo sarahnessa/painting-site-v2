@@ -1,4 +1,3 @@
-import React from "react"
 import { Link } from "react-router-dom"
 import { APP_ROUTES } from './routes'
 
@@ -10,15 +9,16 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
+} from "./components/ui/navigation-menu"
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip"
+} from "./components/ui/tooltip"
 
-export function NavMenu() {
+
+export function NavMenu(_asChild: any) {
   
   return (
 
@@ -34,7 +34,7 @@ export function NavMenu() {
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuTrigger>Series</NavigationMenuTrigger>
-                <NavigationMenuContent>
+                <NavigationMenuContent asChild>
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <NavigationMenuLink className="text-gray-500">

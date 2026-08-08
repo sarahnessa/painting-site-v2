@@ -1,7 +1,7 @@
 // src/routes.tsx
 import { createBrowserRouter } from 'react-router-dom';
-import { App } from "@/App"
-import { Contact } from "@/ContactForm";
+import { App } from "./App"
+import { Contact } from "./ContactForm";
 
 // 1. Declare absolute path literals safely
 export const APP_ROUTES = {

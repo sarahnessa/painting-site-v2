@@ -1,10 +1,9 @@
-import React from "react"
-import { Modal } from "@/Modal"
-import { NavMenu } from "@/NavMenu"
+import { Modal } from "./Modal"
+import { NavMenu } from "./NavMenu"
 
-import avatar from "@/assets/sarah-avatar.png"
-import collage from "@/assets/collage.png"
-import "@/App.css"
+import avatar from "./assets/sarah-avatar.png"
+import collage from "./assets/collage.png"
+import "./App.css"
 
 
 export function App() {
