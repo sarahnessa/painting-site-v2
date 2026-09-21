@@ -21,7 +21,7 @@ export function App() {
                 <h1>Oil painter</h1>
               </div>
               <div id="about-me">
-                <p>Hello, I'm Sarah Nessa, an oil painter interested in creating original pieces that reflect my experiential and creative perspective, in a nutshell. Aside from some years of various art class K-University level, I have shadowed with artist David Molesky. </p>
+                <p>Hello, I'm Sarah Nessa. I am an oil painter dedicated to creating original pieces that capture my personal experiences and creative perspective. My artistic background includes years of formal art education from K-12 through university, as well as mentorship shadowing artist David Molesky. My work has been proudly featured in various exhibitions throughout Berkeley and San Francisco, California.</p>
               </div>
             </section>
 
