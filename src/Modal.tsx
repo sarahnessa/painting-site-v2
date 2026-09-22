@@ -21,7 +21,7 @@ export function Modal() {
             <AlertDialogHeader>
               <AlertDialogTitle>Artist at work</AlertDialogTitle>
               <AlertDialogDescription>
-                Check my Instagram page &mdash; @sarahnessaart for updates.
+                Check out my latest work on Instagram at @sarahnessaart for future updates and behind-the-scenes peeks.
               </AlertDialogDescription>
             </AlertDialogHeader>
             <AlertDialogFooter>
