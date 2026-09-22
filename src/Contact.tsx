@@ -11,7 +11,7 @@ import { Input } from "./components/ui/input"
 import { Textarea } from "./components/ui/textarea"
 import { Button } from "./components/ui/button"
 
-import NavMenu from "./NavMenu"
+import NavMenu from "./NavMenu.tsx"
 
 
 // 1. Define the interface for form data state
@@ -79,7 +79,7 @@ export const Contact: React.FC = () => {
     <div id="contact-form">
       <span id="dash-lg">&ndash;</span>
       <h2>Contact</h2>
-      <p>For questions about pricing, availability, or all other inquiries, send me a message.</p>
+      <p>Got a question about a piece, pricing, or custom work? Send me a note below and I’ll get back to you soon.</p>
       <br />
       <br />
       <form onSubmit={sendEmail}>
@@ -91,7 +91,7 @@ export const Contact: React.FC = () => {
             type="text"
             id="contact-from-name"
             name="from_name"
-            placeholder="Funky Frog"
+            placeholder="Your name"
             value={formData.from_name}
             onChange={handleChange}
             required
@@ -106,7 +106,7 @@ export const Contact: React.FC = () => {
             type="email"
             id="contact-from-email"
             name="from_email"
-            placeholder="youremailaddress@funkyfrog.com"
+            placeholder="sayhello@youremail.com"
             value={formData.from_email}
             onChange={handleChange}
             required
@@ -120,6 +120,7 @@ export const Contact: React.FC = () => {
           <Textarea
             id="contact-message"
             name="message"
+            placeholder="Please detail your gallery, press, or acquisition inquiry..."
             value={formData.message}
             onChange={handleChange}
             required

@@ -1,86 +1,131 @@
-import { Link } from "react-router-dom"
-import { APP_ROUTES } from './routes'
+import { Link } from "react-router-dom";
+import { APP_ROUTES } from "./routes.tsx";
 
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-} from "./components/ui/navigation-menu"
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "./components/ui/tooltip"
+import * as React from "react";
+import Button from "@mui/material/Button";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import Tooltip, {
+  type TooltipProps,
+  tooltipClasses,
+} from "@mui/material/Tooltip";
+import { styled } from "@mui/material/styles";
+import Box from "@mui/material/Box";
+import Stack from "@mui/material/Stack";
+import Zoom from "@mui/material/Zoom";
 
+export default function NavMenu() {
+  const id = React.useId();
+  const buttonId = `${id}-button`;
+  const menuId = `${id}-menu`;
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
-export function NavMenu(_asChild: any) {
-  
+  const HtmlTooltip = styled(({ className, ...props }: TooltipProps) => (
+    <Tooltip describeChild {...props} classes={{ popper: className }} />
+  ))(({ theme }) => ({
+    [`& .${tooltipClasses.tooltip}`]: {
+      backgroundColor: "#100b1c",
+      color: "#fcfbf6",
+      maxWidth: 220,
+      fontSize: theme.typography.pxToRem(12),
+      border: "none",
+    },
+  }));
+
   return (
-
-    <>
     <div id="main-nav">
-        <TooltipProvider>
-          <NavigationMenu>
-            <NavigationMenuList>
-              <NavigationMenuItem>
-                <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                  <Link to={APP_ROUTES.home}><span className="inline-block w-fit">About</span></Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuTrigger>Series</NavigationMenuTrigger>
-                <NavigationMenuContent asChild>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <NavigationMenuLink className="text-gray-500">
-                        <span className="inline-block w-fit">Nature x Spirit</span>
-                      </NavigationMenuLink>
-                    </TooltipTrigger>
-                    <TooltipContent className="bg-[#100b1c] text-[#fcfbf6] border-none shadow-lg" side="left" sideOffset={0}>
-                      <p>Under construction</p>
-                    </TooltipContent>
-                  </Tooltip>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <NavigationMenuLink className="text-gray-500">
-                        <span className="inline-block w-fit">Science x Art</span>
-                      </NavigationMenuLink>
-                    </TooltipTrigger>
-                    <TooltipContent className="bg-[#100b1c] text-[#fcfbf6] border-none shadow-lg" side="left" sideOffset={0}>
-                      <p>Under construction</p>
-                    </TooltipContent>
-                  </Tooltip>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <NavigationMenuLink className="text-gray-500">
-                        <span className="inline-block w-fit">Travel Gems</span>
-                      </NavigationMenuLink>
-                    </TooltipTrigger>
-                    <TooltipContent className="bg-[#100b1c] text-[#fcfbf6] border-none shadow-lg" side="left" sideOffset={0}>
-                      <p>Under construction</p>
-                    </TooltipContent>
-                  </Tooltip>
-                </NavigationMenuContent>
-
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                  <Link to={APP_ROUTES.contact}><span className="inline-block w-fit">Contact</span></Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
-        </TooltipProvider>
-      </div>
-    </>
-
-  )
-};
-
-
-export default NavMenu
+      <Button>
+        <Link to={APP_ROUTES.home}>
+          <span className="inline-block w-fit">About</span>
+        </Link>
+      </Button>
+      <Button
+        id={buttonId}
+        aria-controls={open ? menuId : undefined}
+        aria-haspopup="true"
+        aria-expanded={open}
+        onClick={handleClick}
+      >
+        Series
+      </Button>
+      <Menu
+        id={menuId}
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        slotProps={{
+          list: {
+            "aria-labelledby": buttonId,
+          },
+        }}
+      >
+        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+          <Stack direction="column" sx={{ alignItems: "flex-start" }}>
+            <HtmlTooltip
+              describeChild
+              title="Work in progress"
+              placement="left"
+              slots={{
+                transition: Zoom,
+              }}
+            >
+              <span>
+                <MenuItem disabled onClick={handleClose}>
+                  Nature x Spirit
+                </MenuItem>
+              </span>
+            </HtmlTooltip>
+          </Stack>
+        </Box>
+        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+          <Stack direction="column" sx={{ alignItems: "flex-start" }}>
+            <HtmlTooltip
+              describeChild
+              title="Work in progress"
+              placement="left"
+              slots={{
+                transition: Zoom,
+              }}
+            >
+              <span>
+                <MenuItem disabled onClick={handleClose}>
+                  Science x Art
+                </MenuItem>
+              </span>
+            </HtmlTooltip>
+          </Stack>
+        </Box>
+        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+          <Stack direction="column" sx={{ alignItems: "flex-start" }}>
+            <HtmlTooltip
+              describeChild
+              title="Work in progress"
+              placement="left"
+              slots={{
+                transition: Zoom,
+              }}
+            >
+              <span>
+                <MenuItem disabled onClick={handleClose}>
+                  Travel Gems
+                </MenuItem>
+              </span>
+            </HtmlTooltip>
+          </Stack>
+        </Box>
+      </Menu>
+      <Button>
+        <Link to={APP_ROUTES.contact}>
+          <span className="inline-block w-fit">Contact</span>
+        </Link>
+      </Button>
+    </div>
+  );
+}

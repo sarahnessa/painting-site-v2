@@ -1,5 +1,5 @@
 import { Modal } from "./Modal"
-import { NavMenu } from "./NavMenu"
+import NavMenu from "./NavMenu.tsx";
 
 import avatar from "./assets/sarah-avatar.png"
 import collage from "./assets/collage.png"
@@ -21,7 +21,7 @@ export function App() {
                 <h1>Oil painter</h1>
               </div>
               <div id="about-me">
-                <p>Hello, I'm Sarah Nessa. I am an oil painter dedicated to creating original pieces that capture my personal experiences and creative perspective. My artistic background includes years of formal art education from K-12 through university, as well as mentorship shadowing artist David Molesky. My work has been proudly featured in various exhibitions throughout Berkeley and San Francisco, California.</p>
+                <p>Hello, I am Sarah Nessa, an oil painter dedicated to capturing personal experiences and unique perspectives through rich textures and light. I hold a Bachelor of Arts from UC Berkeley, where I studied Psychology and Pre-Medicine, a background that deeply informs my exploration of human emotion and perception on canvas.<br/><br/>My artistic foundation spans years of formal training from K-12 through university, complemented by an intensive mentorship under artist David Molesky. My original works have been featured in exhibitions throughout Berkeley and San Francisco, California.</p>
               </div>
             </section>
 

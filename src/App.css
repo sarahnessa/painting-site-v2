@@ -12,15 +12,13 @@
   display: flex;
   justify-content: flex-end;
   align-self: flex-start;
-  color: #100b1c !important;
+  gap: 20px;
+  margin: 25px 40px;
+
 }
 
-#main-nav [data-slot="navigation-menu-content"] {
-  margin-right: 0;
-  margin-left: 0;
-  right: 0;
-  position: relative;
-  display: block;
+#main-nav button {
+  color: #100b1c !important;
 }
 
 #center {
@@ -59,6 +57,7 @@
 #about-me p {
   margin-block: 0;
   padding-block: 0;
+  padding-right: 20px;
   line-height: 1.5;
   font-size: 18px;
 }
